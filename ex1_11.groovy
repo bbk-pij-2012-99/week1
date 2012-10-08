@@ -196,4 +196,35 @@ else if (val3 == val4 || val4 == val5) {
 if ((suit1 == suit2) && (suit1 == suit3) && (suit1 == suit4) && (suit1 == suit5) {
 	sameSuit = true;
 }
+
+\\Choose best hand
+
+println "Best hand:"
+if (isStraight && sameSuit) {
+	println "Stright flush"
+}
+else if (maxRank == 4) {
+	println "Poker"
+}
+else if (maxRank == 3 && numPair == 1) {
+	println "Full House"
+}
+else if (sameSuit) {
+	println "Flush"
+}
+else if (isStaight) {
+	println "Straight"
+}
+else if (maxRank == 3) {
+	println "Three of a kind"
+}
+else if (numPairs == 2) {
+	println "Two pairs"
+}
+else if (numPairs == 1) {
+	println "Pair"
+}
+else {
+	println "Nothing"
+}
 	
