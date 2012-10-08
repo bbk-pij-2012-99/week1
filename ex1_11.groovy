@@ -1,6 +1,11 @@
 println "Enter five cards by entering value then suit";
 Integer min, val1, val2, val3, val4, val5;
+Integer i = 0;
+boolean sameSuit = false;
+boolean isStraight = false;
 String str;
+
+\\load cards
 
 str = System.console().readLine();
 if (str == "J") {
@@ -77,6 +82,7 @@ else {
 }
 String suit5 = System.console().readLine();
 
+
 \\ Order values
 if (val1 > val2) {
 	min = val2;
@@ -139,7 +145,15 @@ else if (val5 < val4) {
 	val4 = min;
 }
 
-if (suit1 == suit2) {
-	if (suit2 == suit3) {
-		if (suit3 == suit4) {
-			if (suit4 == suit5)
+\\Check consecutive
+
+if ( (val2 - val1 == 1) && (val3 - val2 == 1) && (val4 - val3 == 1) && (val5 - val4 == 1) {
+	isStraight = true;
+}
+	
+
+
+if ((suit1 == suit2) && (suit1 == suit3) && (suit1 == suit4) && (suit1 == suit5) {
+	sameSuit = true;
+}
+	
