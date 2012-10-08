@@ -1,7 +1,7 @@
 println "Enter five cards by entering value then suit";
 Integer min, val1, val2, val3, val4, val5;
 Integer i = 0;
-Integer numPair = 0;
+Integer numPairs = 0;
 Integer maxRank = 1;
 boolean sameSuit = false;
 boolean isStraight = false;
@@ -118,7 +118,7 @@ else if (val4 < val2) {
 else if (val4 < val3) {
 	min = val4;
 	val4 = val3;
-	val3 = minl
+	val3 = min;
 }
 if (val5 < val1) {
 	min = val5;
@@ -149,7 +149,7 @@ else if (val5 < val4) {
 
 //Check consecutive
 
-if ( (val2 - val1 == 1) && (val3 - val2 == 1) && (val4 - val3 == 1) && (val5 - val4 == 1) {
+if ( (val2 - val1 == 1) && (val3 - val2 == 1) && (val4 - val3 == 1) && (val5 - val4 == 1)) {
 	isStraight = true;
 }
 	
@@ -161,7 +161,7 @@ if ((val1 == val4) || (val2 == val5)) {
 else if (val1 == val3) {
 	maxRank = 3;
 	if (val4 == val5) {
-		numPair = 1;
+		numPairs = 1;
 	}
 }
 else if (val2 == val4) {
@@ -170,30 +170,30 @@ else if (val2 == val4) {
 else if (val3 == val5) {
 	maxRank = 3;
 	if (val1 == val2) {
-		numPair = 1;
+		numPairs = 1;
 	}
 }
 else if (val1 == val2) {
-	numPair = 1;
+	numPairs = 1;
 	if (val3 == val4 || val4 == val5) {
-		numPair = 2;
+		numPairs = 2;
 	}
 }
 else if (val2 == val3) {
-	numPair = 1;
+	numPairs = 1;
 	if (val4 == val5) {
-		numPair = 2;
+		numPairs = 2;
 	}
 }
 else if (val3 == val4 || val4 == val5) {
-	numPair = 1;
+	numPairs = 1;
 }
 
 
 
 //Check suits
 
-if ((suit1 == suit2) && (suit1 == suit3) && (suit1 == suit4) && (suit1 == suit5) {
+if ((suit1 == suit2) && (suit1 == suit3) && (suit1 == suit4) && (suit1 == suit5)) {
 	sameSuit = true;
 }
 
@@ -201,18 +201,18 @@ if ((suit1 == suit2) && (suit1 == suit3) && (suit1 == suit4) && (suit1 == suit5)
 
 println "Best hand:"
 if (isStraight && sameSuit) {
-	println "Stright flush"
+	println "Straight flush"
 }
 else if (maxRank == 4) {
 	println "Poker"
 }
-else if (maxRank == 3 && numPair == 1) {
+else if (maxRank == 3 && numPairs == 1) {
 	println "Full House"
 }
 else if (sameSuit) {
 	println "Flush"
 }
-else if (isStaight) {
+else if (isStraight) {
 	println "Straight"
 }
 else if (maxRank == 3) {
