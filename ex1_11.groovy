@@ -1,6 +1,5 @@
 println "Enter five cards by entering value then suit";
 Integer min, val1, val2, val3, val4, val5;
-Integer i = 0;
 Integer numPairs = 0;
 Integer maxRank = 1;
 boolean sameSuit = false;
@@ -152,43 +151,43 @@ else if (val5 < val4) {
 if ( (val2 - val1 == 1) && (val3 - val2 == 1) && (val4 - val3 == 1) && (val5 - val4 == 1)) {
 	isStraight = true;
 }
-	
+
 //Check ranks
-
-if ((val1 == val4) || (val2 == val5)) {
-	maxRank = 4;
-}
-else if (val1 == val3) {
-	maxRank = 3;
-	if (val4 == val5) {
+if (!isStraight) {	
+	if ((val1 == val4) || (val2 == val5)) {
+		maxRank = 4;
+	}
+	else if (val1 == val3) {
+		maxRank = 3;
+		if (val4 == val5) {
+			numPairs = 1;
+		}
+	}
+	else if (val2 == val4) {
+		maxRank = 3;
+	}
+	else if (val3 == val5) {
+		maxRank = 3;
+		if (val1 == val2) {
+			numPairs = 1;
+		}
+	}
+	else if (val1 == val2) {
+		numPairs = 1;
+		if (val3 == val4 || val4 == val5) {
+			numPairs = 2;
+		}
+	}
+	else if (val2 == val3) {
+		numPairs = 1;
+		if (val4 == val5) {
+			numPairs = 2;
+		}
+	}
+	else if (val3 == val4 || val4 == val5) {
 		numPairs = 1;
 	}
 }
-else if (val2 == val4) {
-	maxRank = 3;
-}
-else if (val3 == val5) {
-	maxRank = 3;
-	if (val1 == val2) {
-		numPairs = 1;
-	}
-}
-else if (val1 == val2) {
-	numPairs = 1;
-	if (val3 == val4 || val4 == val5) {
-		numPairs = 2;
-	}
-}
-else if (val2 == val3) {
-	numPairs = 1;
-	if (val4 == val5) {
-		numPairs = 2;
-	}
-}
-else if (val3 == val4 || val4 == val5) {
-	numPairs = 1;
-}
-
 
 
 //Check suits
